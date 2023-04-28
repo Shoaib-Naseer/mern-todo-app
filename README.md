@@ -70,6 +70,5 @@ The `frontend/Dockerfile` file includes the following steps:
 
 The `docker-compose.yaml` file includes the following services:
 
-- `mongo`: runs a MongoDB container
 - `backend`: runs the backend server container, linked to the `mongo` container
 - `frontend`: runs the frontend client container, linked to the `backend` container
