@@ -1,0 +1,73 @@
+ul {
+    border-radius: 8px;
+    width: 100%;
+    padding: 0;
+    height: 320px;
+    overflow: auto;
+  }
+  
+  .item {
+    background: var(--background-color);
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px 10px;
+    position: relative;
+  }
+  
+  .item .todo-wrapper {
+    width: 100%;
+    padding-inline: 20px;
+  }
+  
+  .todo-wrapper > input {
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+  }
+  
+  .item:not(:last-child)::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background: var(--primary-color);
+    bottom: 0;
+    left: 0;
+  }
+  
+  .item:last-child {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Scrollbar Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Scrollbar Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+  }
+  
+  /* Scrollbar Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+
+
+
+  
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  

@@ -1,0 +1,67 @@
+.container {
+    margin-top: 5em;
+    position: relative;
+    width: 600px;
+}
+
+.App{
+    position: relative;
+}
+.App > div {
+    padding-inline: 1rem;
+}
+
+.App::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('./images/background-image.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter:opacity(.7) brightness(60%) blur(1px);
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.avatar > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #c4c4c4dc;
+}
+
+.todo-form {
+    margin-block-end: 1em;
+    width: 100%;
+    padding:20px 20px;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255,0.6);
+    backdrop-filter: blur(2px) brightness(60%);
+    box-shadow: var(--outer-box-shadow), var(--inner-box-shadow);  
+}
+.todo-form > h2{
+    width: 85%;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+}
+.todo-form > input {
+    width: 100%;
+    border: none;
+    padding: 0 10px;
+    font-size: 18px;
+    background: transparent;
+}
+
+
+ 
+
