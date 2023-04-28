@@ -14,9 +14,9 @@ To install the app, follow these steps:
 
 To run the app using Docker, follow these steps:
 
-1. Build the images: `docker-compose build`
-2. Start the containers: `docker-compose up`
-3. Open your browser and navigate to `http://localhost:5000`
+1. In Backend Directory run: `npm run start`
+2. In the Frontend Directory run: `npm run start`
+3. Open your browser and navigate to `http://localhost:3000`
 
 ## Features
 
