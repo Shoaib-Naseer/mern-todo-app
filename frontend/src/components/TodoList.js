@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { editTodo } from '../services/api';
+import { completeTodo, editTodo } from '../services/api';
 
 import '../global.css';
 import './todoList.css';
@@ -22,6 +22,17 @@ const TodoList = ({ todo, deleteHandler, getAllTodos }) => {
     }
   };
 
+  const completeTodoTask = async (id, data) => {
+    try {
+      await completeTodo(id, data);
+      getAllTodos();
+      setIsEditing(false);
+      setShowOptions(false);
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   const editTodoTask = async (id, data) => {
     if (newTodo.trim() !== '') {
       try {
@@ -32,6 +43,8 @@ const TodoList = ({ todo, deleteHandler, getAllTodos }) => {
       } catch (error) {
         alert(error);
       }
+    } else {
+      alert('Task Cant be empty');
     }
   };
 
@@ -79,12 +92,14 @@ const TodoList = ({ todo, deleteHandler, getAllTodos }) => {
 
   const viewTemplate = (
     <li data-testid="todo" className="item d-flex align-items-center">
-      <label for="checkbox" aria-label="Toggle Task completed"></label>
+      <label htmlFor="checkbox" aria-label="Toggle Task completed"></label>
       <input
         type="checkbox"
         id="checkbox"
         defaultChecked={todo.completed}
-        onClick={() => editTodoTask(todo._id, { completed: !todo.completed })}
+        onClick={() =>
+          completeTodoTask(todo._id, { completed: !todo.completed })
+        }
       />
       <div className="todo-wrapper">
         <p>{todo.task}</p>
@@ -114,7 +129,7 @@ const TodoList = ({ todo, deleteHandler, getAllTodos }) => {
         <button
           type="button"
           className="material-symbols-outlined"
-          onClick={() => editTodoTask(todo._id, { text: newTodo })}
+          onClick={() => editTodoTask(todo._id, { task: newTodo })}
           aria-label="Save changes"
         >
           done

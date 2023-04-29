@@ -65,7 +65,7 @@ function App() {
               className="todo-form d-flex align-items-center"
               onSubmit={(e) => addTodoTask(e)}
             >
-              <label htmlFor="newTodo"></label>
+              <label htmlFor="newTodo" className="visibility-none"></label>
               <input
                 type="text"
                 id="newTodo"
@@ -104,7 +104,6 @@ function App() {
             <ul role="list">
               {todos.map((todo) => (
                 <Item
-                  
                   todo={todo}
                   deleteHandler={deleteHandler}
                   key={todo._id}

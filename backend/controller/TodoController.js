@@ -50,6 +50,22 @@ exports.deleteAllTodos = async (req, res) => {
 exports.editTodo = async (req, res) => {
   try {
     const { id } = req.params;
+    const todo = await Todo.findById(id);
+    if (!todo) {
+      return res.status(404).json('Todo Not Found');
+    }
+    const result = await Todo.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
+    res.status(201).json(result);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+exports.completeTodo = async (req, res) => {
+  try {
+    const { id } = req.params;
     const completedTime = Date.now();
     const { completed } = req.body;
 

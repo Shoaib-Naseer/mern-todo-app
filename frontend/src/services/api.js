@@ -34,6 +34,14 @@ export const editTodo = async (id, data) => {
   }
 };
 
+export const completeTodo = async (id, data) => {
+  try {
+    return await axios.put(`${URL}/completeTodo/${id}`, data);
+  } catch (err) {
+    throw new Error('error while calling edit Todo api', err);
+  }
+};
+
 export const deleteTodo = async (id) => {
   try {
     return await axios.delete(`${URL}/${id}`);
