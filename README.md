@@ -22,7 +22,7 @@ OR
 
 1. Build the images: `docker-compose build`
 2. Start the containers: `docker-compose up`
-3. Open your browser and navigate to `http://localhost:3000
+3. Open your browser and navigate to `http://localhost:3000`
 
 ## Features
 
