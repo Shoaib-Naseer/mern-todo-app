@@ -69,6 +69,7 @@ const TodoList = ({ todo, deleteHandler, getAllTodos }) => {
     <div className="icons">
       <button
         className="material-symbols-outlined"
+        aria-label="Show Options"
         onClick={() => setShowOptions(true)}
       >
         drag_indicator
@@ -78,7 +79,7 @@ const TodoList = ({ todo, deleteHandler, getAllTodos }) => {
 
   const viewTemplate = (
     <li data-testid="todo" className="item d-flex align-items-center">
-      <label for="checkbox"></label>
+      <label for="checkbox" aria-label="Toggle Task completed"></label>
       <input
         type="checkbox"
         id="checkbox"
@@ -100,11 +101,14 @@ const TodoList = ({ todo, deleteHandler, getAllTodos }) => {
           id={`todo-${todo._id}`}
           value={newTodo}
           ref={inputRef}
-          aria-label="Edit todo"
           onKeyPress={(e) => handleKeyPress(e, todo._id, { task: newTodo })}
           onChange={(e) => setNewTodo(e.target.value)}
         />
-        <label htmlFor={`todo-${todo._id}`} className="todo-label"></label>
+        <label
+          htmlFor={`todo-${todo._id}`}
+          className="todo-label"
+          aria-label="Edit todo"
+        ></label>
       </div>
       <div className="icons">
         <button
