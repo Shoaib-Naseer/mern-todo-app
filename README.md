@@ -12,6 +12,13 @@ To install the app, follow these steps:
 
 ## Usage
 
+### before usage
+
+Must include this in .env file
+
+MONGO_URL = mongodb+srv://shoaib:103219@cluster0.6bk6n.mongodb.net/todo-cowlar?retryWrites=true&w=majority
+PORT = 5000
+
 To run the app using Docker, follow these steps:
 
 1. In Backend Directory run: `npm run start`
